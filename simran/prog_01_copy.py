@@ -1,11 +1,7 @@
-import os 
-print("Current working directory: {0}".format(os.getcwd()))
-
-
-
 import shutil
+import os 
 
-file = r'/home/simran.tyagi/Downloads/simran/file1.txt' ## enter the path of the original file with file name and extension
-copied_file = r'/home/simran.tyagi/Downloads/simran2/copyfile.txt' ## enter the path where you want to copy your file with the filename you want to give and extension
+source = input("Enter source file with full path: ")
+destination_path = input("Enter destination file with full path: ")
 
-shutil.copyfile(file,copied_file)
+shutil.copyfile(source,destination_path)
