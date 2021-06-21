@@ -1,0 +1,2 @@
+used module shutil for copying the file from one locaton to another
+
