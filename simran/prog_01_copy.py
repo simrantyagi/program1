@@ -1,7 +1,11 @@
+import argparse
 import shutil
-import os 
 
-source = input("Enter source file with full path: ")
-destination_path = input("Enter destination file with full path: ")
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description= "Copy file")
+    parser.add_argument('source',type=argparse.FileType('r'))
+    parser.add_argument('destination', type=argparse.FileType('w'))
+    args = parser.parse_args()
+    print(args.source)
 
-shutil.copyfile(source,destination_path)
+shutil.copyfile(args.source, args.destination)
