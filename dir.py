@@ -5,7 +5,7 @@ import shutil
 import os
 import split
 from pathlib import Path
-import mimetypes
+
 
 media_type = {'media_file': 0, 'text_file': 0, 'other': 0}
 file_count = 0
