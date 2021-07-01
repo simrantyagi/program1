@@ -1,3 +1,0 @@
-Module1 - shutil
-Module2 - pathlib
-Module3 - argsparse
