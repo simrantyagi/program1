@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 media_type = {'media_file': 0, 'text_file': 0, 'other': 0}
-file_count = 0
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Copy file")
     parser.add_argument('source')
@@ -22,18 +22,15 @@ if __name__ == '__main__':
             print("Copying file from src to destination")
             if not os.path.exists(args.destination): ## this is for making dest directory
                 os.mkdir(args.destination)
-            else:
-                for _, _, dest in os.walk(args.destination):
-                    for _sfile in dest:
-                            # if os.path.isfile(_sfile)
-                        if _sfile in args.destination:
-                            file_count += 1
+            
             for item in os.listdir(folder_path): ## this for copying the files
                 file_path = os.path.join(args.source, item)
                 if os.path.isfile(file_path):
                     shutil.copy(file_path, args.destination)
             time.sleep(2)
             print(root, f)
+            
+            
         for sfile in files: ##this for loop is for getting the file name not as a list for extracting the
             file_extension = os.path.splitext(sfile)[-1]
             if file_extension in '.png, .mp4, .mp3, .jpg,.jpeg':
@@ -43,7 +40,7 @@ if __name__ == '__main__':
             else:
                 media_type['other'] = media_type.get('other') + 1
     print(media_type)
-    print(file_count)
+    
 
 
 
